@@ -39,14 +39,14 @@
         <label for="idmarisco">Marisco</label>
         <input type="checkbox" name="comida[]" id="idmarisco" value="Marisco" <?php if(in_array("Marisco", $_POST['comida'])) echo "checked";?>>
         <br />
-        <label for="idcomentario">Deja tu comentario:</label>
+        <label for="idcomentario">Deja tu comentario: <?php if(isset($_POST['enviar']) && empty($_POST['comentario']) || $_POST['comentario'] == "" || $_POST['comentario'] == null) echo "<span style='color:red'> Debe introducir un comentario!!</span>";?></label>
         <br />
         <textarea name="comentario" id="idcomentario" cols="30" rows="10">
             <?php
                 if(isset($_POST['comentario'])) echo $_POST['comentario'];
             ?>
         </textarea>
-        <?php if(isset($_POST['enviar']) && !isset($_POST['comentario'])) echo "<span style='color:red'> Debe introducir un comentario!!</span>";?>
+        
         <br />
         <input type="submit" value="Enviar" name="enviar">
     </form>

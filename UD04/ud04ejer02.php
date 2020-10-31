@@ -74,7 +74,7 @@
             </div>
         <?php
         
-        $conexion = new mysqli('localhost', 'root', '', 'bdlibros');
+        $conexion = new mysqli('localhost', 'root', 'tutuha', 'bdlibros');
         if ($conexion->connect_errno) {
             echo "La conexión a la base de datos no ha sido posible...";
         }

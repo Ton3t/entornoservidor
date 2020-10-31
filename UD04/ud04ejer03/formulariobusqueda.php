@@ -6,9 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="resultadopaises.php" method="get">
+    <h1>Buscar por País</h1>
+    <form action="resultadopaises.php" method="post">
         <label for="idpais">Escribe un pais: <input type="text" name="pais" id="idpais"></label>
         <input type="submit" value="Buscar" name="enviando">
     </form>
+    <a href="formulariointroduccion.php">Atrás</a>
 </body>
 </html>

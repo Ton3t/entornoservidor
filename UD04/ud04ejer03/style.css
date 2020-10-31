@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+.cajai {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 30vw;
+    text-align: end;
+}
+
+.cajad {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70vw;
+}
+
+.button {
+    width: 40vw;
+}
+
+h1 {
+    text-align: center;
+}
+
+.botones {
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    justify-content: center;
+    align-content: center;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 25vw;
+}
