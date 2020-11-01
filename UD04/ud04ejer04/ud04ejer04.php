@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ejercicio 4 - PDO</title>
 </head>
-
 <body>
     <h1>Inserta Libro</h1>
     <div id="contenedor">
@@ -73,7 +71,12 @@
                     </div>
                     <div class="respuesta">
                         <input type="submit" name="enviar" id="idañadir" value="Añadir libro">
-                        <a href="buscador.php">Buscar Libro</a>
+                        <h4>
+                            <a href="buscador.php">Buscar Libro</a>
+                        </h4>
+                        <h4>
+                            <a href="mostrar.php">Mostrar Libros</a>
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -91,7 +94,5 @@
 
         </form>
     </div>
-
 </body>
-
 </html>

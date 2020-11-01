@@ -11,7 +11,7 @@ $paginas = $_POST['paginas'];
 if(is_numeric($paginas)) {
     $resultado = $conexion->insertarProducto($id, $titulo, $autor, $paginas);
     echo $resultado . "<br>";
-    $resultado = $conexion->cargarProductos();
+    $resultado = $conexion->cargarProductosEliminar();
     echo $resultado;
 }
 else {
