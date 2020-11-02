@@ -11,7 +11,7 @@
     <form action="modificarlibro.php" method="post">
     <h1>Modificar libro</h1>
         <label for="idid">ID:
-            <input type="text" name="id" id="idid" value="<?php echo $_GET['id'] ?>">
+            <input type="text" name="id" id="idid" value="<?php echo $_GET['id'] ?>" readonly>
         </label><br>
         <label for="idnombre">Nombre
             <input type="text" name="nombre" id="idnombre">
@@ -29,6 +29,17 @@
     <?php
     require("../modelo/clase_consulta.php");
     require("../modelo/clase_conexion.php");
+    $conexion = new Consulta();
+    $resultado = $conexion->cargarProductosEliminar();
+    echo $resultado;
+    if(isset($_POST["modificar"])) {
+        $resultado = $conexion->modificarProducto($_POST["id"], $_POST["nombre"], $_POST["autor"], $_POST["paginas"]);
+        echo $resultado;
+        echo $conexion->cargarProductosEliminar();
+    }
+
+        
+    /*
     $connect = new Consulta();
     $resultado = $connect->cargarProductosEliminar();
     echo "<h3>Tabla de libros</h3>";
@@ -49,18 +60,18 @@
             $titulo = $_POST['nombre'];
             $autor = $_POST['autor'];
             $paginas = $_POST['paginas'];
-            $sql = "UPDATE LIBROS SET id = ?, titulo = ?, autor = ?, paginas = ? WHERE id = $id";
+            $sql = "UPDATE LIBROS SET titulo = ?, autor = ?, paginas = ? WHERE id = $id";
             $consulta = $conexion->prepare($sql);
-            $consulta->bindParam(1, $id);
-            $consulta->bindParam(2, $titulo);
-            $consulta->bindParam(3, $autor);
-            $consulta->bindParam(4, $paginas);
+            $consulta->bindParam(1, $titulo);
+            $consulta->bindParam(2, $autor);
+            $consulta->bindParam(3, $paginas);
             $consulta->execute();
             echo "<h3>Registro modificado</h3>";
             $resultado = $connect->cargarProductosEliminar();
             echo $resultado;
         }
     }
+    */
     ?>
 </body>
 

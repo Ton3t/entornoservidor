@@ -15,9 +15,9 @@ if(is_numeric($paginas)) {
     echo $resultado;
 }
 else {
-    echo "El campo PAGINAS no es numerico<br>";
+    echo "<h3>El campo PAGINAS no es numerico</h3><br>";
 }
 
-echo "<a href='../ud04ejer04.php'>Atrás</a>";
+echo "<a href='../ud04ejer04.php'><button>Atrás</button></a>";
 
 ?>

@@ -11,11 +11,17 @@
     <?php
     require("../modelo/clase_consulta.php");
     require("../modelo/clase_conexion.php");
-    $connect = new Consulta();
-    $resultado = $connect->cargarProductosEliminar();
-    echo "<h3>Tabla de libros</h3>";
+    $conexion = new Consulta();
+    $resultado = $conexion->cargarProductosEliminar();
+    echo "<h3>Tabla antigua</h3>";
+    echo $resultado;
+    echo "<h3>Tabla modificada</h3>";
+    $resultado = $conexion->eliminarProducto($_GET["id"]);
+    echo $resultado;
+    $resultado = $conexion->cargarProductosEliminar();
     echo $resultado;
 
+    /*
     $host = "localhost";
     $db = "bdlibros";
     $user = "root";
@@ -34,7 +40,9 @@
         echo $resultado;
     }
     echo "<a href='../ud04ejer04.php'>Atras</a>";
+    */
     ?>
+    <a href="../ud04ejer04.php">Atrás</a>
 </body>
 
 </html>

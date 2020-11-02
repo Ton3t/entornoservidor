@@ -52,4 +52,54 @@ class Consulta
         $mensaje .= "</table>";
         return $mensaje;
     }
+
+    public function buscarProducto($id)
+    {
+        $bbdd = new Conexion();
+        $conexion = $bbdd->getConexion();
+        $sql = "SELECT * FROM LIBROS WHERE titulo = ?";
+        $consulta = $conexion->prepare($sql);
+        $consulta->bindParam(1, $id);
+        $consulta->execute();
+        $row = null;
+        $mensaje = "<table border><tr><th>ID</th><th>NOMBRE</th><th>AUTOR</th><th>PÁGINAS</th></tr>";
+        while ($row = $consulta->fetch()) {
+            $mensaje .=  "<tr><td>" . $row['id'] . "</td><td>" . $row['titulo'] . "</td><td>" . $row['autor'] . "</td><td>" . $row['paginas'] . "</td><tr/>";
+        }
+        $mensaje .= "</table>";
+        return $mensaje;
+    }
+
+    public function modificarProducto($id, $titulo, $autor, $paginas)
+    {
+        $bbdd = new Conexion();
+        $conexion = $bbdd->getConexion();
+        $sql = "UPDATE LIBROS SET titulo = ?, autor = ?, paginas = ? WHERE id = ?";
+        $consulta = $conexion->prepare($sql);
+        $consulta->bindParam(1, $titulo);
+        $consulta->bindParam(2, $autor);
+        $consulta->bindParam(3, $paginas);
+        $consulta->bindParam(4, $id);
+        if (@$consulta->execute()) {
+            $mensaje = "<h3>Registro modificado correctamente.</h3><br>";
+        } else {
+            $mensaje = "<h3>Fallo al modificar el registro.</h3>";
+        }
+        return $mensaje;
+    }
+
+    public function eliminarProducto($id)
+    {
+        $bbdd = new Conexion();
+        $conexion = $bbdd->getConexion();
+        $sql = "DELETE FROM LIBROS WHERE id = ?";
+        $consulta = $conexion->prepare($sql);
+        $consulta->bindParam(1, $id);
+        if (@$consulta->execute()) {
+            $mensaje = "<h3>Registro eliminado correctamente.</h3><br>";
+        } else {
+            $mensaje = "<h3>Fallo al eliminar el registro.</h3><br>";
+        }
+        return $mensaje;
+    }
 }

@@ -17,7 +17,13 @@
 
     require("./modelo/clase_consulta.php");
     require("./modelo/clase_conexion.php");
-
+    $conexion = new Consulta();
+    if(isset($_POST["buscador"])) {
+        $resultado = $conexion->buscarProducto($_POST["titulo"]);
+        echo $resultado;
+    }
+    
+    /*
     $host = "localhost";
     $db = "bdlibros";
     $user = "root";
@@ -54,6 +60,7 @@
             }
         }
     }
+    */
     ?>
     <h4>
         <a href="ud04ejer04.php">Atras</a>
