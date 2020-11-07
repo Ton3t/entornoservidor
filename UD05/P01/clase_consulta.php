@@ -16,6 +16,5 @@ class Consulta
             echo "<script>alert('$usuario ya esta registrado.')</script>";
         }
     }
-
-    
 }
+?>
