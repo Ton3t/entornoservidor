@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block title %}Biblioteca{% endblock %}
+{% block body %}
+<div class="container">
+<header>
+    <h1>Biblioteca particular</h1>
+</header>
+<nav>
+    <ul>
+        <li>
+            <a href="{{path('inicio')}}">Inicio</a>
+        </li>
+        <li>
+            <a href="{{path('arrayLibros')}}">Ver libros</a>
+        </li>
+    </ul>
+</nav>
+<main>
+{% block main %}{% endblock %}
+</main>
+
+<footer>- Desarrollo Web en Entorno Servidor -</footer>
+</div>
+{% endblock %}

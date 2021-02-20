@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>ajax2-ejemplo06</title>
+<script>
+window.addEventListener("click",inicia,false)
+function inicia(){
+   ajax=new XMLHttpRequest();
+   
+   ajax.addEventListener("load",mostrar,false);
+   ajax.open("GET","documento2.php",true);
+   ajax.open("GET","documento2.json",true);
+   ajax.send();
+   ajax.responseType="json";
+  
+   
+}
+
+function mostrar(e){
+   
+   var v_resultado=document.getElementById("resultado");
+   v_resultado.innerHTML=e.target.response;
+   xml=e.target.response;
+   
+}
+
+</script>
+
+</head>
+<body>
+<section id="peticion">
+<button id="boton">Pulsar</button>
+</section>
+<section id="resultado">
+</section>
+</body>
+</html>

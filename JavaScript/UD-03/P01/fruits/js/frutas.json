@@ -1,0 +1,69 @@
+{
+    "frutas": [
+        {
+            "ref": 1,
+            "nombre": "Aguacate",
+            "precio": 5
+        },
+        {
+            "ref": 2,
+            "nombre": "Albaricoque",
+            "precio": 3
+        },
+        {
+            "ref": 3,
+            "nombre": "Cereza",
+            "precio": 7
+        },
+        {
+            "ref": 4,
+            "nombre": "Fresas",
+            "precio": 6
+        },
+        {
+            "ref": 5,
+            "nombre": "Granada",
+            "precio": 5
+        },
+        {
+            "ref": 6,
+            "nombre": "Lima",
+            "precio": 1
+        },
+        {
+            "ref": 7,
+            "nombre": "Manzana",
+            "precio": 2
+        },
+        {
+            "ref": 8,
+            "nombre": "Melocotón",
+            "precio": 3
+        },
+        {
+            "ref": 9,
+            "nombre": "Naranja",
+            "precio": 4
+        },
+        {
+            "ref": 10,
+            "nombre": "Pera",
+            "precio": 4
+        },
+        {
+            "ref": 11,
+            "nombre": "Piña",
+            "precio": 2
+        },
+        {
+            "ref": 12,
+            "nombre": "Platano",
+            "precio": 2
+        },
+        {
+            "ref": 13,
+            "nombre": "Sandia",
+            "precio": 1
+        }
+    ]
+}
